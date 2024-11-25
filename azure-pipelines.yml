@@ -5,9 +5,9 @@
 
 trigger:
  - Master
-
+ - releases/*
  pool:
-  vmImage: "windows-latest"
+  vmImage: "ubuntu-latest"
 
  steps:
  - task: Maven@4
@@ -15,7 +15,7 @@ trigger:
      mavenPomFile: 'pom.xml'
      mavenOptions: '-Xmx3072m'
      javaHomeOption: 'JDKVersion'
-     jdkVersionOption: '1.11'
+     jdkVersionOption: '1.17'
      jdkArchitectureOption: 'x64'
      publishJUnitResults: false
      testResultsFiles: '**/surefire-reports/TEST-*.xml'
